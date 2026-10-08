@@ -2,6 +2,8 @@
 
 Embed [Råd til Bolig](https://raadtilbolig.dk/) calculators in your website to collect leads for adviser follow-up. This guide covers mortgage refinancing and home equity calculators for Danish homeowners.
 
+The guide is also available in [index.html](index.html). Download the file and open it in your browser.
+
 The calculators render inline as web components. Visitors enter their address, loans and contact details before seeing the result. Submitting the contact step creates a customer and property record with the supplied loans for your company.
 
 | Calculator | Result |
