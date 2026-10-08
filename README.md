@@ -16,9 +16,16 @@ Edit `index.html` directly. It has no build step, external fonts, analytics or l
 
 ## Publish on GitHub Pages
 
-1. Create the public repository `raadtilbolig/lead-generation-calculators` and upload these files, including `.nojekyll`, to its `main` branch.
-2. In **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**, and save.
-3. Open the published guide and check the links and code examples.
+1. Create the empty public repository `raadtilbolig/lead-generation-calculators` on GitHub. Leave GitHub's README, licence and `.gitignore` initialisation options unchecked.
+2. Commit your documentation changes on `main` inside this submodule, then run this command from the parent repository's root:
+
+   ```sh
+   direnv exec . just docs push_lead_generation
+   ```
+
+   The command pushes the submodule's committed `main` branch to its configured `origin` and sets upstream tracking. It requires Git push access to the organisation's repository.
+3. In **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**, and save.
+4. Open the published guide and check the links and code examples.
 
 The expected address is `https://raadtilbolig.github.io/lead-generation-calculators/`. If you change the repository name or use a custom domain, update this README, the canonical and Open Graph URLs in `index.html`, and `sitemap.xml` together.
 
@@ -30,7 +37,7 @@ The page contains a descriptive title, meta description, canonical URL, semantic
 
 This repository lives at `docs/public/lead-generation-calculators` as a Git submodule inside the private application repository. It has its own history and publishes only the files listed here. Commit documentation updates inside this repository, then record the updated submodule commit in the parent repository.
 
-The configured GitHub remote becomes usable after the public repository has been created and uploaded. Keep the initial local commit when pushing so the parent repository's submodule reference remains available remotely. If you upload through GitHub's web interface, update the parent's submodule reference to the resulting remote commit afterwards.
+Create the public repository before running the push command. Pushing preserves the local history so the parent repository's submodule reference is available remotely.
 
 ## Integration support
 
