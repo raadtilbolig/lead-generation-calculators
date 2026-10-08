@@ -50,7 +50,7 @@ The components obtain their calculator token from the platform's `/v2/calculator
 If your site uses a Content Security Policy, allow:
 
 - Your supplied asset host for scripts, styles, fonts and images.
-- The matching API and platform hosts for connections.
+- Your supplied asset host and the matching API and platform hosts in `connect-src`. The asset host serves the recommendation JSON files.
 - `blob:` images for property photos.
 - Any Google Fonts origins referenced by your theme.
 
