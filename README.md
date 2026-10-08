@@ -1,8 +1,8 @@
-# Mortgage calculator embed
+# Lead generation calculators
 
-Embed Råd til Bolig's mortgage and home equity calculators in your website to collect property, loan and contact information for adviser follow-up.
+Embed Råd til Bolig calculators in your website to collect leads for adviser follow-up. The current integrations cover mortgage refinancing and home equity for Danish homeowners.
 
-**[Read the integration guide](https://raadtilbolig.github.io/mortgage-calculator-embed/)** (available after GitHub Pages is enabled).
+**[Read the integration guide](https://raadtilbolig.github.io/lead-generation-calculators/)** (available after GitHub Pages is enabled).
 
 The guide is in English. The calculator interface currently uses Danish and amounts in DKK. An integration requires an agreed asset host, theme and registered website origins from Råd til Bolig.
 
@@ -16,19 +16,19 @@ Edit `index.html` directly. It has no build step, external fonts, analytics or l
 
 ## Publish on GitHub Pages
 
-1. Create the public repository `raadtilbolig/mortgage-calculator-embed` and upload these files, including `.nojekyll`, to its `main` branch.
+1. Create the public repository `raadtilbolig/lead-generation-calculators` and upload these files, including `.nojekyll`, to its `main` branch.
 2. In **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**, and save.
 3. Open the published guide and check the links and code examples.
 
-The expected address is `https://raadtilbolig.github.io/mortgage-calculator-embed/`. If you change the repository name or use a custom domain, update this README, the canonical and Open Graph URLs in `index.html`, and `sitemap.xml` together.
+The expected address is `https://raadtilbolig.github.io/lead-generation-calculators/`. If you change the repository name or use a custom domain, update this README, the canonical and Open Graph URLs in `index.html`, and `sitemap.xml` together.
 
-Use this repository description: “Embed mortgage and home equity calculators in your website. Integration documentation for lead generation with Råd til Bolig.” Set the repository website to the published guide. Suggested topics: `mortgage-calculator`, `home-equity`, `lead-generation`, `web-components`, `denmark`.
+Use this repository description: “Embed lead generation calculators in your website. Integration documentation from Råd til Bolig, starting with mortgage and home equity calculators.” Set the repository website to the published guide. Suggested topics: `lead-generation`, `calculators`, `web-components`, `mortgage-calculator`, `home-equity`, `denmark`.
 
 The page contains a descriptive title, meta description, canonical URL, semantic headings, Open Graph metadata and a sitemap. Add a relevant link from your main website so visitors and search engines can discover it. Search engines decide whether to index and rank the page.
 
 ## Repository layout
 
-This repository can live at `docs/public/mortgage-calculator-embed` as a Git submodule inside the private application repository. It has its own history and publishes only the files listed here. Commit documentation updates inside this repository, then record the updated submodule commit in the parent repository.
+This repository lives at `docs/public/lead-generation-calculators` as a Git submodule inside the private application repository. It has its own history and publishes only the files listed here. Commit documentation updates inside this repository, then record the updated submodule commit in the parent repository.
 
 The configured GitHub remote becomes usable after the public repository has been created and uploaded. Keep the initial local commit when pushing so the parent repository's submodule reference remains available remotely. If you upload through GitHub's web interface, update the parent's submodule reference to the resulting remote commit afterwards.
 
