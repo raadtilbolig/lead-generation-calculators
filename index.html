@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lead generation calculators — embed example</title>
-    <link rel="stylesheet" href="ASSET_ORIGIN/app.css">
-    <link rel="stylesheet" href="ASSET_ORIGIN/fonts.css">
+    <link rel="stylesheet" href="ASSET_ORIGIN/assets/v1/app.css">
+    <link rel="stylesheet" href="ASSET_ORIGIN/assets/v1/fonts.css">
     <script>
       window.RAAD_TIL_BOLIG = window.RAAD_TIL_BOLIG || {};
       window.RAAD_TIL_BOLIG.config = {
@@ -26,46 +26,20 @@
       <section aria-labelledby="loan-check-heading">
         <h2 id="loan-check-heading">Loan Check</h2>
         <div class="YOUR_THEME_CLASS">
-          <app-calculator-inline sync-url="false" url-prefix="loan-check">
-            <app-calculator-state-address
-              state="address" label="Address" pagination>
-            </app-calculator-state-address>
-            <app-calculator-state-loans
-              state="loans" label="Loans" pagination>
-            </app-calculator-state-loans>
-            <app-calculator-state-contact
-              state="contact" label="Contact" pagination>
-            </app-calculator-state-contact>
-            <app-rebalance-state-result
-              state="result" advisorname="YOUR_ADVISER_NAME">
-            </app-rebalance-state-result>
-          </app-calculator-inline>
+          <rtb-loan-check advisorname="YOUR_ADVISER_NAME"></rtb-loan-check>
         </div>
       </section>
 
       <section aria-labelledby="home-equity-heading">
         <h2 id="home-equity-heading">Home Equity</h2>
         <div class="YOUR_THEME_CLASS">
-          <app-calculator-inline sync-url="false" url-prefix="home-equity">
-            <app-calculator-state-address
-              state="address" label="Address" pagination>
-            </app-calculator-state-address>
-            <app-calculator-state-loans
-              state="loans" label="Loans" pagination>
-            </app-calculator-state-loans>
-            <app-calculator-state-contact
-              state="contact" label="Contact" pagination>
-            </app-calculator-state-contact>
-            <app-calculator-state-result
-              state="result" advisorname="YOUR_ADVISER_NAME">
-            </app-calculator-state-result>
-          </app-calculator-inline>
+          <rtb-home-equity advisorname="YOUR_ADVISER_NAME"></rtb-home-equity>
         </div>
       </section>
     </main>
     <script type="module"
-      src="ASSET_ORIGIN/static/components/components.esm.js"></script>
+      src="ASSET_ORIGIN/static/v1/components/components.esm.js"></script>
     <script type="module"
-      src="ASSET_ORIGIN/static/assets/ionicons/ionicons.esm.js"></script>
+      src="ASSET_ORIGIN/static/v1/assets/ionicons/ionicons.esm.js"></script>
   </body>
 </html>
