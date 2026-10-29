@@ -29,9 +29,25 @@ Replace these values in `index.html`:
 | `YOUR_ADVISER_NAME` | The adviser name shown with the result. The image comes from your asset bundle. |
 | `https://www.example.com/privacy` | Your privacy policy URL. |
 
-The example sets `sync-url="false"` to preserve your page's URL hash. Keep a distinct, stable `url-prefix` for each calculator so their saved browser states remain separate.
+Each calculator needs one element:
 
-The `label` attributes set the step navigation text. Other interface text comes from the Danish component bundle.
+```html
+<rtb-loan-check advisorname="YOUR_ADVISER_NAME"></rtb-loan-check>
+<rtb-home-equity advisorname="YOUR_ADVISER_NAME"></rtb-home-equity>
+```
+
+The wrappers include the address, loans, contact and result steps with Danish navigation labels. They preserve your page's URL hash by default (`sync-url="false"`). Their default `url-prefix` values are `loan-check` and `home-equity`, which keep their saved browser states separate. If you install multiple copies of one calculator, give each a distinct, stable `url-prefix`.
+
+Optional attributes:
+
+| Attribute | Behaviour |
+| --- | --- |
+| `advisorname` | Adviser name shown with the result. |
+| `subtitle` | Text above address search. The Danish bundle supplies the default. |
+| `url-prefix` | Key for saved browser state and, when enabled, URL navigation. |
+| `sync-url="true"` | Updates the URL hash when moving between steps. |
+
+When replacing an existing integration, keep its `url-prefix` to preserve saved browser state. Shared configuration still supplies the company name, privacy URL, recommendation profile, adviser image and contact link.
 
 To add a contact link to the recommendation card, set `recommendationCtaUrl` and `recommendationCtaLabel` in `window.RAAD_TIL_BOLIG.config`.
 
@@ -43,14 +59,20 @@ Keep the configuration before the module scripts. Load one component version and
 
 Your CMS controls the surrounding layout, cookie banner and analytics. Check that it preserves custom elements and `type="module"` scripts when saving. Keep the previous CMS version so you can restore it if installation fails.
 
-The components obtain their calculator token from the platform's `/v2/calculator/token` endpoint using your registered website origin.
+The components obtain their calculator token from `/v3/calculator/token` on the matching public host (`public.raadtilbolig.dk` or `public.beta.raadtilbolig.dk`) using your registered website origin. Calculator data requests also use that public host's `/v3/` routes.
+
+### Component versions
+
+The example pins runtime, icons and brand styles to `v1`. Confirm that your supplied asset host has published the wrapper build before installing it. Compatible updates are published within the current major. A future `v2` uses new asset paths while `v1` remains hosted; upgrading requires changing all imports together. Load one component major per page.
+
+Existing `app-*` integrations keep their current markup and unversioned asset URLs. Their compiled files remain hosted. Install the versioned `rtb-*` example when you are ready to migrate.
 
 ### Content Security Policy
 
 If your site uses a Content Security Policy, allow:
 
 - Your supplied asset host for scripts, styles, fonts and images.
-- Your supplied asset host and the matching API and platform hosts in `connect-src`. The asset host serves the recommendation JSON files.
+- Your supplied asset host and the matching public host in `connect-src`. The asset host serves the recommendation JSON files.
 - `blob:` images for property photos.
 - Any Google Fonts origins referenced by your theme.
 
