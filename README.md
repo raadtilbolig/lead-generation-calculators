@@ -51,6 +51,37 @@ When replacing an existing integration, keep its `url-prefix` to preserve saved 
 
 To add a contact link to the recommendation card, set `recommendationCtaUrl` and `recommendationCtaLabel` in `window.RAAD_TIL_BOLIG.config`.
 
+### Calculator overview
+
+Use a slotted list with one tile per calculator:
+
+```html
+<rtb-calculator-navigation-list>
+  <rtb-calculator-navigation-tile
+    calculator="loan-check"
+    href="/lanetjek/">
+  </rtb-calculator-navigation-tile>
+
+  <rtb-calculator-navigation-tile
+    calculator="home-equity"
+    href="/frivaerdi/">
+  </rtb-calculator-navigation-tile>
+</rtb-calculator-navigation-list>
+```
+
+`calculator` supplies the configured brand's Danish title, description and icon.
+Set `href` to the calculator page on your website. The example file links to the
+two calculator sections on the same page; replace those fragment URLs when using
+separate pages.
+
+Choose which calculators appear by adding, removing or reordering the child tiles.
+An explicit title inside a tile, `description`, `iconname` and `image` override its
+defaults. Existing tiles with explicit content continue to work. Use the supplied
+brand asset host, or set the supplied `recommendationProfile` in the shared
+configuration when your integration requires it.
+
+Install this overview after your asset host has published calculator tile presets.
+
 ## 3. Add the example to your website
 
 Serve the configured file from your registered HTTPS origin. To embed it in an existing CMS page, copy its stylesheet links, configuration, module scripts and chosen calculator section into the CMS's HTML or code facility.
